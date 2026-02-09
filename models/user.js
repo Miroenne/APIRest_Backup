@@ -35,9 +35,8 @@ User.pre('save', async function(next){
         return next();
     }
 
-    this.password = await bcrypt.hashSync(this.password, 10);
+    this.password = bcrypt.hashSync(this.password, 10);
 
-    next();
 });
 
 module.exports = mongoose.model('User',User);
