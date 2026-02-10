@@ -17,7 +17,7 @@ exports.checkJWT = async (req, res, next) => {
 
                const expiresIn = 24*60*60; // 24h
                const newToken = jwt.sign({
-                    user: req.decoded.user
+                    user: decoded.user
                 }, 
                 SECRET_KEY, 
                 {
